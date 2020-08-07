@@ -2,6 +2,8 @@ import React from "react";
 import { useStateValue } from "../../context/GlobalState";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const Product = ({ id, title, image, price, rating, quantity }) => {
   // eslint-disable-next-line no-empty-pattern
@@ -20,9 +22,6 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
         rating: rating,
         quantity: quantity,
       },
-    });
-    dispatch({
-      type: "UPDATE",
     });
   };
 
@@ -50,16 +49,18 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     cart.map((item) => {
       if (item.id === id) {
         setItemQuantity(item.quantity);
       }
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
 
   return (
     <div className="product">
-      <div className="product__info">
+      <Link to={`${id}/details`} className="product__info">
         <h3>{title}</h3>
         <p className="product__price">
           <small>$</small>
@@ -73,25 +74,34 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
               <p key={i}>⭐</p>
             ))}
         </div> */}
+      </Link>
+      <Link to={`${id}/details`}>
+        <div className="product__imageContainer">
+          <img src={image} alt="" />
+        </div>
+      </Link>
+
+      <div className="product__form">
+        <button
+          className="product__cartButton"
+          onClick={itemQuantity === 0 ? addToCart : addQuantity}
+        >
+          <AddShoppingCartIcon style={{ fontSize: 14 }} />
+          {itemQuantity === 0 ? "add to cart" : "add quantity"}
+        </button>
+
+        {itemQuantity > 0 && (
+          <form className="product__quantity">
+            <input
+              min="0"
+              type="number"
+              size="2"
+              value={itemQuantity}
+              onChange={changeQuantity}
+            />
+          </form>
+        )}
       </div>
-
-      <img src={image} alt="" />
-
-      <button onClick={itemQuantity === 0 ? addToCart : addQuantity}>
-        {itemQuantity === 0 ? "add to cart" : `add item : ${itemQuantity}`}
-      </button>
-
-      {itemQuantity > 0 && (
-        <form className="product__quantity">
-          <input
-            min="0"
-            type="number"
-            size="2"
-            value={itemQuantity}
-            onChange={changeQuantity}
-          />
-        </form>
-      )}
     </div>
   );
 };

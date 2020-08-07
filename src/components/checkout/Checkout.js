@@ -16,7 +16,7 @@ const Checkout = () => {
       <div className="checkout">
         <div className="checkout__left">
           {cart?.length === 0 ? (
-            <div>
+            <div className="checkout__empty">
               <h2>Your chart is empty</h2>
               <p>
                 You have no item in your cart. To add product to your cart,

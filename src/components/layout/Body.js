@@ -10,11 +10,11 @@ const Home = () => {
     <div className="home">
       <img
         className="home__image"
-        src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+        src="https://images.unsplash.com/photo-1547822281-5c9d3ab15297?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"
+        // src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
         alt="hero"
       />
 
-      {/* product */}
       <div className="home__row">
         {products.map((product) => {
           return (

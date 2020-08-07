@@ -7,10 +7,11 @@ import Checkout from "./components/checkout/Checkout";
 import Login from "./components/account/Login";
 import { useStateValue } from "./context/GlobalState";
 import { projectAuth, projectDB } from "./config/firebase";
+import ProductDetails from "./components/product/ProductDetails";
 
 function App() {
   // eslint-disable-next-line no-empty-pattern
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscibe = projectAuth.onAuthStateChanged((authUser) => {
@@ -52,6 +53,7 @@ function App() {
           payload: data,
         });
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -62,6 +64,7 @@ function App() {
             <Navbar />
             <Checkout />
           </Route>
+          <Route path="/:id/details" component={ProductDetails} />
           <Route path="/login" component={Login} />
           <Route path="/">
             <Navbar />
