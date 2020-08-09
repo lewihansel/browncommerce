@@ -8,11 +8,12 @@ import Login from "./components/account/Login";
 import { useStateValue } from "./context/GlobalState";
 import { projectAuth, projectDB } from "./config/firebase";
 import ProductDetails from "./components/product/ProductDetails";
+import Footer from "./components/layout/Footer";
 
 function App() {
   // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
-
+  console.log(process.env.REACT_APP_API_KEY);
   useEffect(() => {
     const unsubscibe = projectAuth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -63,12 +64,14 @@ function App() {
           <Route path="/checkout">
             <Navbar />
             <Checkout />
+            <Footer />
           </Route>
           <Route path="/:id/details" component={ProductDetails} />
           <Route path="/login" component={Login} />
           <Route path="/">
             <Navbar />
             <Home />
+            <Footer />
           </Route>
         </Switch>
       </Router>

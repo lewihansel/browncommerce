@@ -5,7 +5,8 @@
   --light-accent: #5fdfed;
   --dark-accent: #465d98;
   --button-col: #ba843a;
-  --button-hover: #b4751d;
+  --button-hover: #d49a48;
+  --button-accent-2: #6e450c;
 }
 
 * {
@@ -140,7 +141,44 @@
   width: 100%;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   z-index: -1;
-  height: 100vh;
+  position: absolute;
+  top: 60px;
+}
+
+.home__hero {
+  background-color: rgba(237, 236, 230, 0.5);
+  border-radius: 50px;
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.home__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  /* position: absolute;
+  top: 15rem; */
+}
+
+.home__logo > img {
+  width: 200px;
+}
+
+.home__logo > div {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+}
+
+.home__Description {
+  font-size: 1rem;
+  width: 500px;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgba(237, 236, 230, 0.8);
 }
 
 @media screen and (min-width: 1600px) {
@@ -148,8 +186,8 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    position: absolute;
-    margin-top: 100px;
+    /* position: absolute;
+    margin-top: 100px; */
     z-index: 1;
   }
 }
@@ -158,12 +196,10 @@
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  position: absolute;
-  margin-top: 100px;
+  /* position: absolute;
+  margin-top: 100px; */
   z-index: 1;
   max-width: 80vw;
-  /* margin-left: 10px;
-  margin-right: 10px; */
 }
 
 /* product view styling */
@@ -245,7 +281,7 @@
 }
 
 .product__cartButton:hover,
-button:focus {
+.product__cartButton:focus {
   background: var(--button-hover);
 }
 
@@ -362,7 +398,7 @@ button:focus {
 }
 
 .productDetails__addToCartButton:hover,
-button:focus {
+.productDetails__addToCartButton:focus {
   background: var(--button-hover);
 }
 
@@ -390,7 +426,7 @@ button:focus {
 }
 .checkout {
   display: flex;
-  margin: 0 auto;
+  margin: 2rem auto;
   /* padding: 20px;
   background-color: white;
   height: max-content; */
@@ -425,13 +461,20 @@ button:focus {
   margin: 20px;
   padding: 1rem;
   background-color: white;
+  border-radius: 10px;
 }
 
 .checkoutProduct__image {
   object-fit: contain;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   background-color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0.4px 2.2px rgba(0, 0, 0, 0.02),
+    0 1px 5.3px rgba(0, 0, 0, 0.028), 0 1.9px 10px rgba(0, 0, 0, 0.035),
+    0 3.4px 17.9px rgba(0, 0, 0, 0.042), 0 6.3px 33.4px rgba(0, 0, 0, 0.05),
+    0 15px 80px rgba(0, 0, 0, 0.07);
 }
 
 .checkoutProduct__info {
@@ -447,23 +490,50 @@ button:focus {
   display: flex;
 }
 
-.checkoutProduct__info > button {
-  background: #f0c14b;
+.checkoutProduct__button {
   border: 1px solid;
   margin-top: 10px;
-  border-color: #a88734 #9c7e31 #846a29;
-  color: #111;
+  margin-left: 0.5rem;
+  height: 22px;
+  background-color: var(--button-col);
+  height: 22px;
+  color: var(--light-shade);
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+}
+
+.checkoutProduct__button:hover,
+.checkoutProduct__button:focus {
+  background: var(--button-hover);
+}
+
+.checkoutProduct__button:focus {
+  outline: 1px solid var(--button-col);
+  outline-offset: -4px;
+}
+
+.checkoutProduct__button:active {
+  transform: scale(0.99);
 }
 
 .subtotal {
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 4.5rem;
+  right: 0;
   width: 300px;
   height: 100px;
   padding: 20px;
   background-color: #f3f3f3;
   border: 1px solid #dddddd;
   justify-content: space-between;
+  border-radius: 10px;
 }
 
 .subtotal > button {
@@ -549,4 +619,23 @@ button:focus {
   margin-top: 10px;
   border-color: darkgray;
   color: #111;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 2rem;
+  background-color: var(--dark-shade);
+  color: var(--light-shade);
+}
+
+.footer > img {
+  height: 80px;
+  padding: 1rem;
+}
+
+.footer > span {
+  color: var(--main-col);
+  padding-bottom: 1rem;
 }

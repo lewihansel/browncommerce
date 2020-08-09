@@ -23,6 +23,10 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
         quantity: quantity,
       },
     });
+    console.log([...cart]);
+    // dispatch({
+    //   type: "PUSH_CART",
+    // });
   };
 
   const addQuantity = () => {
@@ -55,7 +59,7 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
         setItemQuantity(item.quantity);
       }
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart]);
 
   return (

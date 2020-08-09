@@ -16,11 +16,9 @@ const Navbar = () => {
 
   return (
     <nav className="header">
-      {/* logo */}
       <Link to="/" className="header__logo">
         <img
-          // src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          src="https://firebasestorage.googleapis.com/v0/b/brown-sandbox.appspot.com/o/Brown_Commerce%2Flogo.png?alt=media&token=25e9797d-1924-44a9-9f14-fbd37efdbeb5"
+          src="https://firebasestorage.googleapis.com/v0/b/brown-sandbox.appspot.com/o/Brown_Commerce%2FLogo%20Light.svg?alt=media&token=a781ccc7-8262-4cb2-a7a4-0199d5c1e331"
           alt="brown commerce logo"
         />
         <div>
@@ -29,7 +27,6 @@ const Navbar = () => {
         </div>
       </Link>
 
-      {/* search Box */}
       <div className="header__search">
         {/* <input type="text" className="header__searchInput" /> */}
         {/* <SearchIcon className="header__searchIcon" /> */}

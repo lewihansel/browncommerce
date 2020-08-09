@@ -5,14 +5,16 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
   // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
-  const addQuantity = () => {
+  const addQuantity = (e) => {
+    e.preventDefault()
     dispatch({
       type: "ADD_QUANTITY",
       id,
     });
   };
 
-  const removeFromCart = () => {
+  const removeFromCart = (e) => {
+    e.preventDefault()
     dispatch({
       type: "REMOVE_FROM_CART",
       id,
@@ -50,18 +52,13 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
             value={quantity}
             onChange={changeQuantity}
           ></input>
+          <button className="checkoutProduct__button" onClick={addQuantity}>
+            Add quantity
+          </button>
+          <button className="checkoutProduct__button" onClick={removeFromCart}>
+            Remove from basket
+          </button>
         </form>
-        <button onClick={addQuantity}>Add quantity</button>
-        {/* <div className="checkoutProduct__rating">
-          {Array(rating)
-            .fill()
-            .map((_, i) => (
-              // eslint-disable-next-line jsx-a11y/accessible-emoji
-              <p key={i}>⭐</p>
-            ))}
-        </div> */}
-
-        <button onClick={removeFromCart}>Remove from basket</button>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import { projectDB } from "../config/firebase";
+
 export const initialState = {
   cart: [],
   user: null,
@@ -11,7 +13,6 @@ const reducer = (state, action) => {
   // console.log(action);
   switch (action.type) {
     case "GET_ALL_PRODUCTS":
-
       return {
         ...state,
         products: action.payload,
@@ -46,10 +47,18 @@ const reducer = (state, action) => {
         ...state,
         cart: state.cart.map((item) =>
           item.id === action.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: Number(item.quantity) + 1 }
             : item
         ),
       };
+
+    case "PUSH_CART":
+      projectDB
+        .collection("cart__bronwnCommerce")
+        .doc(state.user.email)
+        .set([...state.cart])
+        .then(console.log(`${state.user.email} cart pushed`));
+      return state;
     case "CHANGE_QUANTITY":
       return {
         ...state,
