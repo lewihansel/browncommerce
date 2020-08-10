@@ -13,7 +13,6 @@ import Footer from "./components/layout/Footer";
 function App() {
   // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
-  console.log(process.env.REACT_APP_API_KEY);
   useEffect(() => {
     const unsubscibe = projectAuth.onAuthStateChanged((authUser) => {
       if (authUser) {
