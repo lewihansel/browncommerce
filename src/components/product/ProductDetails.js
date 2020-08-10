@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
 import { projectDB } from "../../config/firebase";
 import { useStateValue } from "../../context/GlobalState";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
@@ -67,6 +68,7 @@ const ProductDetails = () => {
   return (
     <div>
       <Navbar />
+
       <div className="productDetails">
         <div className="productDetails__left">
           <img
@@ -106,6 +108,8 @@ const ProductDetails = () => {
           </span>
         </div>
       </div>
+      <div style={{ minHeight: "14vh" }} />
+      <Footer />
     </div>
   );
 };

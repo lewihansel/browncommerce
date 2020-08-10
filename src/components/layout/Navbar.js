@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
 import { useStateValue } from "../../context/GlobalState";
-import { auth } from "firebase";
 import { motion } from "framer-motion";
+import { projectAuth } from "../../config/firebase";
 
 const Navbar = () => {
   const [{ cart, user }] = useStateValue();
 
   const login = () => {
     if (user) {
-      auth.signOut();
+      projectAuth.signOut();
     }
   };
 

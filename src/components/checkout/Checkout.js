@@ -8,11 +8,6 @@ const Checkout = () => {
   // console.log("cart =", cart);
   return (
     <div>
-      {/* <img
-        className="checkout__ad"
-        src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
-        alt="advertisement images"
-      /> */}
       <div className="checkout">
         <div className="checkout__left">
           {cart?.length === 0 ? (
@@ -23,6 +18,11 @@ const Checkout = () => {
                 click the "add to cart" button, next to the product you want to
                 buy.
               </p>
+
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/brown-sandbox.appspot.com/o/Brown_Commerce%2FLogo%20Dark%20Accent.svg?alt=media&token=94d5f81a-5c52-4354-a7f7-7b4c6d374ba9"
+                alt=""
+              />
             </div>
           ) : (
             <div>

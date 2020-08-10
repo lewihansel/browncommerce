@@ -1,12 +1,13 @@
 import React from "react";
 import { useStateValue } from "../../context/GlobalState";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
   // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
   const addQuantity = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch({
       type: "ADD_QUANTITY",
       id,
@@ -14,7 +15,7 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
   };
 
   const removeFromCart = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     dispatch({
       type: "REMOVE_FROM_CART",
       id,
@@ -55,8 +56,8 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
           <button className="checkoutProduct__button" onClick={addQuantity}>
             Add quantity
           </button>
-          <button className="checkoutProduct__button" onClick={removeFromCart}>
-            Remove from basket
+          <button className="checkoutProduct__buttonDelete" onClick={removeFromCart}>
+            <HighlightOffIcon style={{ fontSize: 19 }} />
           </button>
         </form>
       </div>

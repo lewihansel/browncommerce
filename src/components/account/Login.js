@@ -34,7 +34,7 @@ const Login = () => {
       <Link to="/">
         <img
           className="login__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+          src="https://firebasestorage.googleapis.com/v0/b/brown-sandbox.appspot.com/o/Brown_Commerce%2FLogo%20Main%20color.svg?alt=media&token=c9c90715-2e30-48ee-a880-b363763422fa"
           alt="logo of the company"
         />
       </Link>
@@ -58,7 +58,7 @@ const Login = () => {
           </button>
         </form>
         <p>
-          bt signing-in, you agree to our company conditions of use & sale.
+          By signing-in, you agree to our company conditions of use & sale.
           Please read our privacy notice
         </p>
         <button className="login__registerButton" onClick={register}>
