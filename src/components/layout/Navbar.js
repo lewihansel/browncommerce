@@ -17,10 +17,10 @@ const Navbar = () => {
   return (
     <nav className="header">
       <Link to="/" className="header__logo">
-        <img
+        {/* <img
           src="https://firebasestorage.googleapis.com/v0/b/brown-sandbox.appspot.com/o/Brown_Commerce%2FLogo%20Light.svg?alt=media&token=a781ccc7-8262-4cb2-a7a4-0199d5c1e331"
           alt="brown commerce logo"
-        />
+        /> */}
         <div>
           <strong>Brown</strong>
           <span>Commerce</span>
