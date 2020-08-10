@@ -32,7 +32,6 @@ const Navbar = () => {
         <SearchIcon className="header__searchIcon" /> */}
       </div>
 
-      {/* 3 links */}
       <div className="header__nav">
         <Link to={!user && "/login"} className="header__link">
           <div onClick={login} className="header__option">
@@ -42,20 +41,6 @@ const Navbar = () => {
             </span>
           </div>
         </Link>
-
-        {/* <Link to="/" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">Return</span>
-            <span className="header__optionLineTwo">& Order</span>
-          </div>
-        </Link>
-
-        <Link to="/" className="header__link">
-          <div className="header__option">
-            <span className="header__optionLineOne">your</span>
-            <span className="header__optionLineTwo">Prime</span>
-          </div>
-        </Link> */}
       </div>
 
       <Link to="/checkout" className="header__link header__cart">

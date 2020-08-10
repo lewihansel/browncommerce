@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import { projectDB } from "../../config/firebase";
 import { useStateValue } from "../../context/GlobalState";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -76,6 +77,9 @@ const ProductDetails = () => {
       <Navbar />
       <div className="productDetails__parent">
         <div className="productDetails">
+          <Link to="/" className="productDetails__backButton">
+            <ArrowBackIosIcon /> Home
+          </Link>
           <div className="productDetails__left">
             <img
               className="productDetails__photo"

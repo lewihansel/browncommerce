@@ -1,6 +1,7 @@
 import React from "react";
 import { useStateValue } from "../../context/GlobalState";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import { Link } from "react-router-dom";
 
 const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
   // eslint-disable-next-line no-empty-pattern
@@ -38,13 +39,17 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
 
   return (
     <div className="checkoutProduct">
-      <img
-        className="checkoutProduct__image"
-        src={image}
-        alt={`product : ${title}`}
-      />
+      <Link to={`${id}/details`}>
+        <img
+          className="checkoutProduct__image"
+          src={image}
+          alt={`product : ${title}`}
+        />
+      </Link>
       <div className="checkoutProduct__info">
-        <p className="checkoutProduct__title">{title}</p>
+        <Link to={`${id}/details`} className="checkoutProduct__title">
+          {title}
+        </Link>
 
         <p className="checkoutProduct__price">
           <small>$</small>
