@@ -15,7 +15,7 @@ const Subtotal = () => {
               Subtotal ({cart.length} products): <strong>{` ${value}`}</strong>
             </p>
             <small className="subtotal__gift">
-              <input type="checkbox" /> This order contains a gift
+              <input type="text" placeholder="have a coupon code?" />
             </small>
           </>
         )}

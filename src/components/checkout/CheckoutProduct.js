@@ -5,7 +5,6 @@ import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
   // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
-
   const addQuantity = (e) => {
     e.preventDefault();
     dispatch({
@@ -22,10 +21,11 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
     });
   };
   const changeQuantity = (e) => {
-    if (e.target.value === "0") {
+    if (!e.target.value) {
       dispatch({
-        type: "REMOVE_FROM_CART",
+        type: "CHANGE_QUANTITY",
         id,
+        quantity: 1,
       });
     } else {
       dispatch({
@@ -38,7 +38,11 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
 
   return (
     <div className="checkoutProduct">
-      <img className="checkoutProduct__image" src={image} alt="" />
+      <img
+        className="checkoutProduct__image"
+        src={image}
+        alt={`product : ${title}`}
+      />
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{title}</p>
 
@@ -48,6 +52,7 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
         </p>
         <form>
           <input
+            min="1"
             type="number"
             value={quantity}
             onChange={changeQuantity}

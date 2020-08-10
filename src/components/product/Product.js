@@ -38,12 +38,8 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
   };
 
   const changeQuantity = (e) => {
-    if (e.target.value === "0") {
-      setItemQuantity(0);
-      dispatch({
-        type: "REMOVE_FROM_CART",
-        id,
-      });
+    if (!e.target.value) {
+      setItemQuantity(1);
     } else {
       dispatch({
         type: "CHANGE_QUANTITY",
@@ -107,7 +103,7 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
         {itemQuantity > 0 && (
           <div className="product__quantity">
             <input
-              min="0"
+              min="1"
               type="number"
               value={itemQuantity}
               onChange={changeQuantity}
