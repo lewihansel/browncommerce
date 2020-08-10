@@ -49,14 +49,16 @@ const CheckoutProduct = ({ id, title, image, price, rating, quantity }) => {
         <form>
           <input
             type="number"
-            size="2"
             value={quantity}
             onChange={changeQuantity}
           ></input>
           <button className="checkoutProduct__button" onClick={addQuantity}>
             Add quantity
           </button>
-          <button className="checkoutProduct__buttonDelete" onClick={removeFromCart}>
+          <button
+            className="checkoutProduct__buttonDelete"
+            onClick={removeFromCart}
+          >
             <HighlightOffIcon style={{ fontSize: 19 }} />
           </button>
         </form>

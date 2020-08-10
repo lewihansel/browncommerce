@@ -28,8 +28,8 @@ const Navbar = () => {
       </Link>
 
       <div className="header__search">
-        {/* <input type="text" className="header__searchInput" /> */}
-        {/* <SearchIcon className="header__searchIcon" /> */}
+        {/* <input type="text" className="header__searchInput" />
+        <SearchIcon className="header__searchIcon" /> */}
       </div>
 
       {/* 3 links */}

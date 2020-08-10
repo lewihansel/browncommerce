@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const Product = ({ id, title, image, price, rating, quantity }) => {
   // eslint-disable-next-line no-empty-pattern
@@ -52,6 +53,15 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
     }
   };
 
+  const removeFromCart = (e) => {
+    e.preventDefault();
+    setItemQuantity(0);
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      id,
+    });
+  };
+
   useEffect(() => {
     // eslint-disable-next-line array-callback-return
     cart.map((item) => {
@@ -95,15 +105,17 @@ const Product = ({ id, title, image, price, rating, quantity }) => {
         </button>
 
         {itemQuantity > 0 && (
-          <form className="product__quantity">
+          <div className="product__quantity">
             <input
               min="0"
               type="number"
-              size="2"
               value={itemQuantity}
               onChange={changeQuantity}
             />
-          </form>
+            <button onClick={removeFromCart}>
+              <HighlightOffIcon style={{ fontSize: 21 }} />
+            </button>
+          </div>
         )}
       </div>
     </div>

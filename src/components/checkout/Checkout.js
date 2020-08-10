@@ -18,11 +18,6 @@ const Checkout = () => {
                 click the "add to cart" button, next to the product you want to
                 buy.
               </p>
-
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/brown-sandbox.appspot.com/o/Brown_Commerce%2FLogo%20Dark%20Accent.svg?alt=media&token=94d5f81a-5c52-4354-a7f7-7b4c6d374ba9"
-                alt=""
-              />
             </div>
           ) : (
             <div>
