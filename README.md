@@ -1,3 +1,12 @@
+# Brown Commerce 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/215dfe08-8714-4b9b-aa03-f1f2722f5608/deploy-status)](https://app.netlify.com/sites/brown-commerce/deploys) 
+
+E-commerce storefront created from scratch with React and Firebase  [Live Demo](https://brown-commerce.netlify.app/)
+
+<br />
+<br />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
